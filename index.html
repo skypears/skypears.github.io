@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prashant Kumar – UI/UX Designer & Front-End Developer</title>
+<meta name="description" content="Senior UI/UX designer and front-end developer in Lucknow, India. 9+ years designing and building web apps, dashboards and design systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF3EE; --surface:#FFFFFF; --ink:#17181C; --muted:#5E5A5C; --line:#F2D9D1;
+  --accent:#E8245E; --accent-ink:#FFFFFF; --pear:#FFC53D; --pear-ink:#17181C;
+  --lilac:#2EC4B6; --lilac-ink:#17181C; --peach:#FF8A3D; --peach-ink:#17181C;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#151417; --surface:#1F1D21; --ink:#F6F2F0; --muted:#B5ADAE; --line:#36323A;
+    --accent:#FF6B8E; --accent-ink:#17181C; --lilac:#0F6E66; --lilac-ink:#E4FFFC; --peach:#8A4210; --peach-ink:#FFEBDD; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151417; --surface:#1F1D21; --ink:#F6F2F0; --muted:#B5ADAE; --line:#36323A;
+  --accent:#FF6B8E; --accent-ink:#17181C; --lilac:#0F6E66; --lilac-ink:#E4FFFC; --peach:#8A4210; --peach-ink:#FFEBDD; color-scheme:dark;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:20}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.025em}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:12px}
+.sub{color:var(--muted);max-width:52ch;margin-bottom:36px}
+
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:30;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:12px;padding:10px 14px 10px 22px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.mark{font:800 1.1rem var(--display);text-decoration:none}
+.mark i{display:inline-block;width:.65em;height:.65em;border-radius:50% 50% 50% 0;background:var(--pear);margin-left:6px}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;font-weight:500}
+nav ul a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;color:var(--muted)}
+nav ul a:hover{background:var(--bg);color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 56px}
+.namerow{display:flex;align-items:center;gap:24px}
+.avatar{flex:none;display:block;width:clamp(84px,18vw,150px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:6px 6px 0 var(--pear)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-weight:500;font-size:.95rem;margin-bottom:24px}
+.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:#2DB864}
+.hero h1{font-size:clamp(2.3rem,6.2vw,4.6rem);font-weight:800}
+.lead{font-size:1.25rem;max-width:34ch;margin:24px 0 32px;color:var(--muted)}
+.lead strong{color:var(--ink);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.i{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{filter:brightness(1.1)}
+
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:20px;box-shadow:0 30px 60px -30px rgba(232,36,94,.35)}
+.stage-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-weight:700}
+.toggle{display:inline-flex;align-items:center;gap:8px;font:700 .9rem var(--body);border:0;background:var(--pear);color:var(--pear-ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.toggle:hover{filter:brightness(.95)}
+.screen{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.box{border-radius:16px;padding:12px;border:2px solid transparent;transition:background .35s,border-color .35s,color .35s}
+.box small{display:block;font-size:.75rem;opacity:.85}
+.box b{font:800 1.5rem var(--display)}
+.b1{background:var(--accent);color:var(--accent-ink)}.b2{background:var(--pear);color:var(--pear-ink)}.b3{background:var(--ink);color:var(--bg)}
+.chart{display:flex;align-items:flex-end;gap:8px;height:130px;background:var(--bg);border-radius:16px;padding:14px;border:2px solid transparent;transition:background .35s,border-color .35s}
+.chart i{flex:1;background:var(--accent);border-radius:7px 7px 0 0;transition:background .35s}
+.screen.wire .box{background:transparent;color:transparent;border:2px dashed var(--muted)}
+.screen.wire .chart{background:transparent;border:2px dashed var(--muted)}
+.screen.wire .chart i{background:var(--line)}
+.caption{margin-top:12px;font-size:.9rem;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:56px}
+.stats div{border-top:2px solid var(--ink);padding-top:14px}
+.stats b{display:block;font:800 clamp(2rem,5vw,3.2rem) var(--display);letter-spacing:-.03em}
+.stats span{color:var(--muted)}
+
+.marquee{overflow:hidden;background:var(--accent);color:var(--accent-ink);padding:18px 0;transform:rotate(-1.2deg);margin:8px -20px 0}
+.track{display:flex;gap:44px;width:max-content;font:700 1.35rem var(--display);animation:slide 32s linear infinite;white-space:nowrap}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:88px 0 0}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{border-radius:28px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px;overflow:hidden;position:relative;grid-column:span 2;text-decoration:none;transition:transform .25s}
+a.tile:hover{transform:translateY(-4px)}
+.tile.w{grid-column:span 3}.tile.x{grid-column:span 4}
+.tile h3{font-size:1.5rem;font-weight:700}
+.tile p{margin-top:6px;opacity:.85;max-width:34ch}
+.tile .kind{font-weight:500;opacity:.8;margin-bottom:8px}
+.t-accent{background:var(--accent);color:var(--accent-ink)}.t-pear{background:var(--pear);color:var(--pear-ink)}
+.t-ink{background:var(--ink);color:var(--bg)}.t-lilac{background:var(--lilac);color:var(--lilac-ink)}
+.t-peach{background:var(--peach);color:var(--peach-ink)}.t-surface{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.t-accent{--tile:var(--accent)}.t-pear{--tile:var(--pear)}.t-ink{--tile:var(--ink)}.t-lilac{--tile:var(--lilac)}.t-peach{--tile:var(--peach)}.t-surface{--tile:var(--surface)}
+.art{display:block;width:100%;max-width:260px;height:auto;margin-bottom:16px}
+.pv{display:flex;gap:8px;align-items:flex-end;height:74px;margin-bottom:14px}
+.pv i{display:block;flex:1;border-radius:10px;background:currentColor;opacity:.22}
+.pv i:nth-child(2n){opacity:.4}.pv .ring{flex:0 0 74px;height:74px;border-radius:50%;background:none;border:12px solid currentColor;opacity:.4}
+.go{font-weight:700;margin-top:14px}
+
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:8px}
+.about p{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.about p+p{margin-top:16px}
+.wins{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.about .lede{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:20px;max-width:24ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin:28px 0 0;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.facts dt{font-size:.9rem;font-weight:500;color:var(--muted)}
+.facts dd{margin:0;font-weight:700}
+.wins .ic{flex:none;width:46px;height:46px;min-width:46px;border-radius:14px;margin:0}
+.wins .ic .i{width:22px;height:22px}
+.wins li{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px 20px}
+.skills h3 small{font:500 .9rem var(--body);color:var(--muted);margin-left:6px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px}
+.step h3{font-size:1.25rem;font-weight:700;margin-bottom:8px}
+.step p{color:var(--muted)}
+.step .n{position:absolute;top:12px;right:20px;font:800 3rem/1 var(--display);color:var(--line)}
+.flow .step:not(:last-child)::after{content:"\2192";position:absolute;top:34px;right:-20px;z-index:2;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--bg);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chips span{font-size:.85rem;font-weight:500;padding:4px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.jobs{list-style:none;margin:36px 0 0;padding:0 0 0 6px;border-left:3px solid var(--ink)}
+.jobs li{position:relative;padding:0 0 36px 28px;max-width:70ch}
+.jobs li::before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--pear);border:3px solid var(--ink)}
+.jobs h3{font-size:1.35rem;font-weight:700}
+.meta{color:var(--muted);margin:2px 0 8px}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+.skills div{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px}
+.skills h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.skills p{color:var(--muted)}
+.ic{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;margin-bottom:18px}
+.ic .i{width:26px;height:26px}
+.ic.a{background:var(--accent);color:var(--accent-ink)}.ic.y{background:var(--pear);color:var(--pear-ink)}
+.ic.t{background:var(--lilac);color:var(--lilac-ink)}.ic.o{background:var(--peach);color:var(--peach-ink)}
+
+.contact{background:var(--accent);color:var(--accent-ink);border-radius:36px;padding:64px 44px;margin:88px 0 40px}
+.contact h2{font-size:clamp(2.2rem,6vw,4rem)}
+.contact p{max-width:46ch;opacity:.85}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.primary{background:var(--pear);border-color:var(--pear);color:var(--pear-ink)}
+.contact .btn.ghost:hover{background:var(--bg);color:var(--ink)}
+footer{padding-bottom:40px;color:var(--muted);font-size:.95rem}
+
+@media (max-width:860px){
+  .hero,.about{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .step::after{display:none!important}
+  .hero{padding-top:48px}
+  nav ul a{padding:8px 9px;font-size:.95rem}
+  .bento{grid-template-columns:1fr 1fr}
+  .tile,.tile.w,.tile.x{grid-column:span 2}
+  .contact{padding:44px 26px}
+}
+@media (max-width:520px){nav ul li:nth-child(3),nav ul li:nth-child(4){display:none}.stats{gap:10px}.flow{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* motion and hover */
+.tile,.step,.wins li,.facts{transition:opacity .6s ease var(--d,0s),translate .6s cubic-bezier(.2,.8,.2,1) var(--d,0s),transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .3s}
+.js .reveal{opacity:0;translate:0 28px}
+.js .reveal.in{opacity:1;translate:0 0}
+a.tile:hover,a.tile:focus-visible{transform:translateY(-8px) rotate(-.5deg);box-shadow:0 26px 40px -22px rgba(23,24,28,.5)}
+.art{transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-origin:left bottom;animation:float 6s ease-in-out infinite}
+.tile:nth-child(2n) .art{animation-delay:-2s}.tile:nth-child(3n) .art{animation-delay:-4s}
+@keyframes float{50%{translate:0 -5px}}
+a.tile:hover .art,a.tile:focus-visible .art{transform:scale(1.08) rotate(-1.5deg)}
+.go{display:inline-block;transition:transform .3s}
+a.tile:hover .go,a.tile:focus-visible .go{transform:translateX(8px)}
+.step:hover,.wins li:hover{transform:translateY(-6px);box-shadow:0 20px 36px -20px rgba(23,24,28,.4);border-color:var(--accent)}
+.step .ic,.wins .ic{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.step:hover .ic,.wins li:hover .ic{transform:rotate(-10deg) scale(1.12)}
+.step .n{transition:color .3s}
+.step:hover .n{color:var(--accent)}
+.chips span{transition:background .2s,color .2s,border-color .2s,transform .2s}
+.chips span:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px)}
+.flow .step:not(:last-child)::after{transition:transform .3s,background .3s}
+.flow .step:hover::after{transform:translateX(5px);background:var(--accent);color:var(--accent-ink)}
+.facts:hover{border-color:var(--accent)}
+.stats div{transition:border-color .3s}
+.stats div:hover{border-color:var(--accent)}
+.stats b{transition:color .3s}
+.stats div:hover b{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="mark" href="#top">Prashant Kumar<i aria-hidden="true"></i></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <p class="pill">Open to new projects</p>
+      <div class="namerow"><img class="avatar" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAEsASwDASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAAAQACAwQFBgcICf/EAEEQAAEDAgQDBQUFBgYBBQAAAAEAAgMEEQUSITEGQVEHEyJhcRQyQoGhI5GxwdEIFTNSYoIWJENTcvDhNGNzkrL/xAAaAQACAwEBAAAAAAAAAAAAAAAAAQIDBQQG/8QAKREAAgIBBAEEAgIDAQAAAAAAAAECEQMEEiExQQUiUWETMiNxM0NSsf/aAAwDAQACEQMRAD8A9EA2WtYRwrNhvG3EnEb6qOSLGI6aOOFrTmi7oWOY7G/ktjSur6ICSSSQAr6IhNuldAh10kAUrpjCldC6SACgkkgBIFJBADkroXSQAkihokkAigikgAbIpIIAV7JJJIAKSSSBBCKCKAIav/TH9V08AlvU8go6k/axt8rqTMGC5dZUy7Lo/qcn/aErzT4Lg+HF9jVVL53X6MFvxXA62N7miaMnvGG4PULqv7QuLGTi6go2jvGUdCC9umhec33rmTXNey7dWnZVy5Z5z1HI3mb+CWhrRURAn3uadUR5yXWGv0WGL3UdRp7p1WYhlE0d91FIz5x2+5FOFhhcWEu7wahw3KyFDU1cMrauiqHwzNPvtJa4H1CjcwOcCNdFHBI2kqHB5sx2t/NDJLK+12dGwDtm4swbKKyVmJU7fhqhmP8A9x4lv9B+0Hgk1M11VhOIRS/E2J7XN+ROq4U2Rj2uDXCx6FVRUtNw9gLgbE2TtnXh9RzRVXZ7GSQRXYehCgUrpIEJBK6SADdK6F0UDEhe6SKAEEikkgAJWRSQAEkbJIEBBOtoggBIIpJDAikggBJJIoEJJKyKBiTgmhOQIrS61Xo0BHV8lrOudAbaBMcbzyO87IyVApYJal2VrIY3Skk/yi6p8sv6R5j7TcQlxXj7G6pozRtm7ho6tYLLWY4ct3N0aeSsOqZqqeaql8XfyvkPzKUoblAG3NVHj9Tk3TbMViNPmbe1jyTcLnIOVx20sr7x3jS2wIWNdE6KUuaLEboFGVx2szVrEH4VXqow8Xte3RPpp2zwWKWbQt5/gg5knFlOCXu3AEkK2WxuOYusT0Kqzss4HfzU7CGtGtkIudVaPZV0kEV2HrhIoXSQISCN0EAJJJBAw6ojRAI3QAkkt0UAK6KAskSAgQbJeSjfMyJhfI9rGNF3OcbBo6k8lptd20cA0FY6ik4gimqG3u2Bhe0f3bJWM3ZouU5wDW3XFMf7fqqoIi4PwV9S/NZ01U0kWvuAsJiva52ixFjZ6agw+XLcNadX6dOai5pElBnoDNmJtrbonN1C8wjtp4zxBxZLVUrJKd4eJY25HtsfdI5g81suH/tI1DchraCJwAtILbu8jyHyRvQtrO8nRBajwz2n8NcWUZqKPEIY3s/iQyvDXsPz3C2emq4qj3Hbi9jpcdVIiWEkUEDCkAhuigAjdOG4TQk52Vrj0BKBFNl5HG2lyStd7Ta92E8CY3UB57x0AgZ6vOVbHT3ygjc7LnnblVCHhugoA/xVdZncOeVg/Vc7dInnltxyf0cHAfExsfRqfYujtsRz6JVFu/JvbT7kmDQ5jfoVXE8dm7I3XGlvCFVnjucwOo5K6WG2g+aifG1wLSL9FJlcZUzHxOkp57C9j1WSBEtnNbZ43HVY6dkjSHMkvbYFWKSru4Nc3IUkWZFatEk0Qc3PGbE8uqjsB72pVuRliXj3He8P5T1TCAD4mgnrZMqjM9iJwTUgus9oOSuhdJAC2SS3SvYoEJBLdLmgAooc0QgYUkkDsgQgReyxXE/FOE8J0DqzFapsLbeCMH7SQ9Gj81qvar2p0fZzhgZFkqMaqmn2SmOzR/uv/pH1K8yVfE1ZxBift2K1s2JVlQ/Vz3aDyA5KMnRJKzce0XtZxrjR7qOlilpsLzWbTQ3vL5vcPwWp8P8ADuIV89pg2jB0a0RaO02uVZdxHV0Ze2mexhPhADQA1YqTEcWlaXPkq3Qndz75R6KptstSSOg1WIVPDzYKEUctTMBZr2Sss0dDZYjHaauxNhnqsIrYX2uH9812U25arAYbHFLK2PEq+CnhcfEyRjy/fQ6LYMIoIHRyCoeyaNh/y7mTuBe30PNVO0XRp8GEfg2IinZUyUrJ23sSyS0o12IWOxLBi4EundAQ3MWkguA8wFt+KYNiDjkgPdwu0Al8FtRu/mtbqacslyOnimqma95Fyt8JvuEKRGUUai4U7ZCWGd7h8Ydlv9y652T9rWIYS04LW1MtRDo6kkndd0LgdWX5tIutE9nw+f2q7nGa47qSIWYCd84WPe+OneHQMLXt0fY6XHMK1MpaPcWGcQ0OLWFJKZrAFzmN8INtrrJleLcP7ScYoYYY6atljZE7MI2us15816H7HO0OTjDDpKeqmEk8Lczcx8duYPorVKyDVHS0QEBqjZSIiTKk/wCXk9LJ6hq3BsPq4KL6GuxgAbGNbea4r244j3mP0NCyw9kozIRf4nm/4LtLY2lmd3iPLovOXaTibcR44xiYWcxkogb6MFlyz6KfUJ1ir5NNkJs1xBJO6kiJJ3HySqb+Hoo43BptexSj0eWzPksC2t3G/RRuBtccvoiSSOpQN/VTOYpTxkajmo2G/gcNORVyRg00IKrk5JPd+STRdGXFF2mc5zLaO5XvuiWvabNFxy8lTaQyRpaS2+6vsddqCucK5R69SSSXWe2DfRJLYJIAVkEUtkCEkkiAgAIpJWugAA2Ko8RY/RcMYFW41iBIpqOMyOA3eeTR5k6K67RcJ/aX4jng/cuCMmLad+esnjHxlujL+QN0mNHFuOeI8S4vxysxmvIFTVPF2DaFg92NvkB9Vh8NElNUFzWxlzIzq82bFpuPNOdNnF3HUDMb8yVWne4xANbdoNzf4j5qpk0W6MT4pXRwRXc55s1hIBtfkt9oMJFfRSU0sjnMZYPbKHMIIGhPotGwm1RUlrII8jiHBrz4mH+krcqMcSYaHz4diUhc5mUslYHhw6aqmeWMeGdOLDKStI6JhOMUWCx0NPi8WH4gMoiZLFkfNHY7WtqFW4kx7hxznimrqeObLZ7ZKKxAttodPVcaxN+I1NS+aZoZPe5dG3Ib9dFVjhxOokJfJUPDtCXSb+qV2uwpp9G28RcWtY+nio6pteyJmV7GtJjHoFqr62GoeSA+BxN8rtr+SmlpcRpIm00Dnsjfq7KzX71Udg1YPGWudr9UWkJqT8EVp6aYys8Tdbi+pB3BUNc4GH7M7+JpCzlRhVZFQwt9nAc0lznj3neRWClpZXOdG1tidch0PyUozTITxyXaKbZXu6F/0f8A+Vv3Y7x3/g3iqKqkYw0847moDz7jSfeHoufvjc02LSCN78ldooCXiY206ndWJlVH0Bo5YqqliqIJGSxStD2PabhzTsQpCuM/s3cVursIrcAqJ3OfSWmgjcb2YdwPK/JdkzXVy5IBuq1bqIm9XqwFWq3gSxAnYEqM+hw7Gz1DaeJ0rtI4GOlefJouvJFTVvqa6WreSXTyvkd8yvTnaBiX7q4GxiqsWk0/csvuS82XlyZuVoaNLLmkZ/qc+YxJJXZhpyTGkCwP/fVNfI3LbUkdEmOJF7JRMDMvJMHWBTmi5vv5JoOVthYk7o6Zb87qw5GB9je17+eyrSEsdqFZcS4ZRuo33vYEEbapEouine1ySVO2UFqD87To0EdUczDuGg+aCy7PZKKRtZJdR7ISO6SSAAikkCgA2S2SSQMNgkkkgQ1wzBeXP2j8S9r45FFlaG0dM2O43Jdqb/evU8Qu5o8x+K8ddrsrq7tFxyV5J/zRjF+QbooyGuzSYoATd9yD+C3DhLhuDF6gMkjDowNfNYNlCRCXnSy6H2eRd1IxmS5IufJcmadR4OzT47lyRYf2aikqXh8eZrX3je3m1blh/DscZa0i4WfjaAfELqeKLIcxGhWXOTk+TcxRjFUioODsKqWfa0sT3HmQsJivZ3Ri5hp2lnQaELeqdhuDbRWnxCQeJuiE34JNLycmh7OYvaM5knDB8LzosvS8D0Xe2LA5sYsPVbvJhrS/OHOPl0S7lkA0AH5ptvyJRiukafWcHUz2loiGvktTx3sxgnZ3jWZXb3XXAWkahQ1bYnx2e3w+SUJNPgMkYyVNHm3irgt2GUpmzElvM7/NaVBVxwuyOaTc2Pl5r0B2i4cJcFq5matY3S/NedZIHOPeHa9itLTTclyY2sxqDVHaP2dMTjg7Q4ad/iM0Escbr2sdD9V6pjFwCvHn7P7C7tSwYiJ0oHeXt8Ph975L2MG5Qu2L4M9gsqlRrWDo1g3V2yoTAS1jwTZoAB89NlHI+CePs5/224kY+GKSjD83tdaM3/Fjc34rhdSwPeR9V0vt6xM/vvC8OjPhgpXzEDk5ziB9FyltSSbONjzXNJ8mJr25ZuPBHMMlgnQOJd+ITZDmJ1uAmxuINtkIzsq4L4tfQC6doQQAoWODtiQRrZSBulr7/VTOBoZlytvfdN0AupjpYDX1CjzFoIsD5JkUNLgSMummqaYQ43sPmnFzTyA9U7OTzQWo9hpIIhdJ7QSN0rJIGJKySSBCRSSQAQkSkkgAg5XAnYan5arxdxbW/vfi7Fau+bvKuV1/LMQF7GxDEqfD4s9Q/KHXaBzNwvHOK4RWYfxFXw1EJgPfvc0ybZXOJBHXQqqcl1fJbGEq3VwZHCOHZsXLcpDYmnUrp/C+AsoGtZFE97gNSG3K1XCGz4JQCMtmldIc+cRZNPK6loMcxuOsbSQ19RB7S8ZHNfbugNSbcyszNK3yzZ0kOLo6DPV0eHzkVk7YXN+B24+SnpsWw2rsY6qI9ATZao+kqMRndJNVCZ8h8Ukg1J6lYriDgvEWwmajc2a2pDHWd8lCKxvyE8uSL6OsQSMLRke0+YKuNcx1hcLz1hlbj9BLaOpqMrDrFKTp81v/AA1xlLJOIq7NC63x6ZkTio9HRinv74OjujGYW2CqTxh1+pUMOMxWzCRpHqsXV8T0WGvc+WZuQm+p1CrfJbTj2XpoJI26BUnyO2eqR7RMAqG5f3hE13QlVpeI8PlkjDauF7ZNLtdsj8bRD8sX2zF8dgnA5mAaPBuvOuJwOgaY8pDS+69M47Tiuweojtmc1udp6rgvFsLXOD2tDdbALq0r8Gdr1fJv37KmGSVHHFbXWb3dHQuDidwXmwt9y9TOXBP2VcBqKXCsYx9+UQVrm00PU5Lkn6rvIN1pwXBlPsI1VGEB8sjjqXOIAV0mwJVCCVlPCah9g2NrpXE9ACVDISx+Tzj2t4gMS7QMWc112UxZSN/sFj9VpMzbuBGhG4VvGcTfiNdVV3OpnfM4/wDI3WMbN47m65mzzuSTlNyLF8rQOqYCA7wm6BmDm6DQJkJzEkjQ80IoyIvx6AG2qsNtYZhre3oqkJcwixuFbF73NvToppnBNckpvYC91A9uvTVPZbW2h5JHRtgAefomVjSLMIte/OyY3JbmPJFwF/eIP0Tg/ILDT1QTR6/SCHNJdR7UcDYJEppSQA66O6aiEAHZEIIhABskdkrIFIDl3aw+uditG2nnfFHFG0+H4iSdFpLIJMS45pY6tgc2jhMtiL+Lkum9oNO32+ileAQ5tyP+N1z3BZJKvG8TxFzMucCNvkOiyZprLNnoIST02OKMzikIqmkEZitNqqSWDF6fKxwIjlcLdbLfaeG+pNz1QqsHfO+nq6bumz07iQJR4ZGkWc0+RHNc0f25Ol3spHMJ/wDEvtDjFUFrL+EM3tdKGq4xirmxiao9jsS6dzLgabW6ro8uHUhBNTQVVIebo2d6z7whSYNh9Y8Ngx6kYL6h3hd9xUvyLqit6V1bbOaRVuNOmz11LI0uN82XTfmr2P14p8FyytIfKQ1gI8Vz0XVqvDsBwehdPUVcGRguZHvBv8lpmAYIOL+Iv37UwFmGUptRwuFs5/3CPwUXyyzGtqNEfUY1glL3nfVdK0gGMSHM133rMSB80DBiVe6SRzQSAwAahbl2rYfHUcKVjo4x3kDe+ZYbW1K12v4TnxfC6DFqD7VskDHOjB1tbUhSj8seVvpGtHgXDsUnJhrXQ33tr9ytU3Z3XYc8upKmLEIyP4efI/5dVjcT4exw1xlw4GGNrmj7N9nNHPMOqyEWIYnglYxpfLUwO2zjxArot1wzPSi3Uo0bbwfiUze/wjEGysmiF2MnFnFvTzXMe1CjGG1RZGPCSXNW64zislbTCpLHOfFGcrS7K43+G+4Wo0WHYhxZj/D2EV7S+pnrGseM2Y92DmNz5AWUsHMxaqKWI9Kdj/DzeG+zrBKMMLJJIBUyg7l7/F+YW6gWCjjYyICOMBrGDK0DkBoFItQxiOpdkgkcN8q1PjrExhHBGN1WaxZSOiaR/M/whbNiBJpy0GxeQ1c67bKltNwXFSDT2utjZbq1gzH8Vz5XySlLbilI87kyABojs0C1jzVeVjg/MxunRZKQ5nPzAFo2KpTvaNhouc80pckTXHKWkHM7QaKZtwMoNmjdSUze8I8uaMzIrmwId1BTIznfA+E5TbMrTH52kb9CsbEXMP8AMDyOiuRyNGmrXHkVKJyZYk99CM2VEk6Bo1tqo75neHUAalIPuB05HoplBICHaZfUIGRrNL3t5IjMbG4d5JGRoNiHg9LJDPXqSCRK6z2w4pBNRvdADkQgEroAIThsmhEIAclbmkPNOaA7TkkBpHHxfJLT920O9nbmcCbaG4WmQMbTtyxts0f91WxcX1j34jUUkjXMmL9iLDINiDzCwFmlujtVkZpXNtG/gi444xZfp7ub4duZ6rI07rs8R2WJpZMrQ3ortPO0kjMP1XJfJ3RXBnaHEKqmp+6pnthbe5cG3cfVa9xDSRzZ6mqEUzzqXSRC5V4Vgibv81r+P4j7S32Zh1fp6Ic7VF0Y07KGEcL0+PQ+31DYYqfORFEG6Osdz5LoGCQRU0AY4MGXTw6BcsrMTxnB6L2Gh7oNaPs5na5Rfop+EOK8Rjp3QYpUsmqWk5nAWBCFJrkg1GXtTOhcQYZHidLNE1rSHtLS07G+4Wi8F4z/AIcp/wBx4lFPJTUzi2CdjbviZf3Xt305FW6vtHw6krYaSofN9q7KXsYSxvqeSt4hUU2IVtJlymQbyMtfKjeP8abSL82F4Rjp9oo6qCWTrG6z/mFSqeGCwWewuHUjVXJOHYp7PIjkPLO3X7wq8+BRCzXurYR/7NW4D7rKaZU4fZrOI4dBLi1NhjWizB7TVD+Vo0a0+pv9yk4TrMG4Q4xrq1tPCKhrmRMjLSSxjtXFvQkndX5MLpcJdIaVrwZnZpHyPL3vO2pO6HAXDMPEHGtZUVMQkhimEjr8wxosPvKvxuV+zs5ssYV/J0dtic17GvbfK4BwvvYp10beVvJKy2TzhVrBmETerr/cuN9vlU59dgOGMf7sUtQ5vQkloP3BdkrP/UwANJsDqOVzZeae27iD2rtAxKOnOd1M2OkYBrlygX+t1y5XyyrWOsFfJqGIVcNG3u2nM4BYmOsdUPtsLoHD53gyTO31Oqt4fhwAzkKpGG9sUWGkwRdSdlF3c0huGn1VzNFHq/cbXVWbEY2X8SdFCt9IRinaNGXHNOa4tIJY4Ebqq/EnfDYp0Vc2Yhr2uB69E0KWOVcoyJDXtva7vLRFjXO31KjYGtcCCbdCFIA43sfuUrOWUaHXkiBc8Ejq1MFcOT2280mSSxmxN7fVShsMnidDG4nmRukRaXk9e3RTUV2ntQpIJbpAOujdNR3QA/dFMCcEAOCc02TAiSkBrvaJI1uDw3a3M6UAOtq0eRXN45sxLbAN2+a3/tIky4NTvtfLUAfeFzKKSzjmPhO6zNZ+5s6D/GZNrzG51/dtdWIamzRawusfHITdpN27gqMTW0A0HI81nSNWBmpJ/siSfmtYxCsZTTGcva148LS46LIVFW32R2uX8itbl4YmxQe0Yi5xhBvHAw6W6uTgl2wySf6oyYxnCWge1VjZHncN1AUE2AU2Kn2uhqYiBvZ9rDzUmGy0eESCMthjj2LJGAhZyODhnETmdS0gkO/dSZb/ACVqpkvwxoxTuHmso7/ZvuNmm4Kkw6FlGGPa3xtIB/RTV2E4bTgyYTJLS1DdgHksd5EFY+lxeCuL4nN7iri0kidoR5jqEpRXRBtwZvVJXh8YOoUtTM2SEtvqtcoa3vIgdyOfmrntBLTmOlt1TGT6LJJdlXE3beq3HsnwkUmE1OJP9+ulOXyaD+q5/W1RcSL3tey67wfDHBwxh0cTg5oi1I/mJJP4rT0cblZjeoTajS8mZKLUwlEOsVpGOUpnt9uc8khsYFzfSwFyvIvEM78RxjEK6FzL1NTJKXu3sXGy7tx5xpxLgWMTYbT8NMmpqprmR1kkhETw4W3A0cOi4dimA1+FQh89Lmjb8UZvZZ2XNFS2yfIavSZsuOLxq0jCkvY3JI5wdfponyYm2B7WsAMYFvVGlbU4jUd3RQVNTKGk9yyMudbnoEJAYXuiq4e6frdkrMhv6GyknatGFkwSg/fEx1dXTVZyQA+qoBlSXZbknosw6MMY3uxbMLnkjBC2Bt8hbm+J2t1JEd6iuEY1kMrbdeitU8NQ94s0+quODI25gM5PQaprKtwPgyny2TK3OTXRbhziwLiLKzkLvEbG3xXWMdWycox6q1TzCaLNex+iEzknB9lgsIHhFx6qEiUE2juPNMknli3GnIhMFcy3ikcD0KZFY2ezEkgiuw9gJJBEBABRQARQIIKcE0JwQAUrIgX0WHx3iqh4cq/Za1k2fI192AEEHayTdElFvox3aO0nhWoI3bJGR95XIxNpvoV0LjXivDsawB0NBOXv75hkY5pBa0XXLHTAOMbjYtNweqzdY05cGvoItQ5+TNMqWljQ69r8uSY6qbmLHmxGx6jqqEVRc2tpzTKw6Z+bSLLgo00zI1ErfCA4uA1Kmo66Rsvdm+Tz69FgPb3NmtsOnVZaKUFokjAewt8Q8/JSiqRW5NuzKVGEU2LixH3blYiq4BZE/vIybjXwkhZTC8WAeQ3Ky3TdX5Maa7MXODi0fenSJpyMfhWFimaCJnlvNrjcKXHcLpnxx1jGNE8R0cNy08ioRiGd78o1JuQPyVd1UWtc0yXa46ByNpGc7ZapnmGANFvmg6skPO4WKdV92crjfoFLFU5IjI4Zjte+gVSXJa5cE5inrquOmp43STyuDWMG7j0XY+E6GswzB2wVwayYuLu7ab92Ol+q0fsvwz944pPizmfY0be7jJG8jv0H4rp7GWWvpMVLezC12e3+NdD0rEohFdpnmk9psx9gw6lBNpKh0hF+TWhaLi1EybCXl4B3C23tJqQcXw+nv/Dp3PPkS4rV8Te0UTr/AAtJ8l5z1CV5mej9OhWBGM7EcHtxtLUtBAgpZDccrmy7TiWEYfisRhxHDqOtYdxPC1310K0DsUpA2TFqwj4Y4gfXVdPc2619EqxKzG1tPKzm+MdhXBWKlzqekqsKkPOjms0f2n9Vp2Mfs5YvA3vMDxmlrg3URVLO6kPzFwSu7ZVK02Fl0uEWZ09Njn2jyDxBwbxBw5M44zgdZTjnIGEst/ybcLAiBkhMjJAByueXrzXtp7i5hjd4mHdrhmafkdFo/EXYxwfxE+ScUTsMq5NTPRHKCepYdD8rKt4vg48np7/1s8wMJhbZzHW5Fw0PzUTZTG90dsodq08l1DiXsE4qwYvmwiSHGqUa5YjkmA82HQ/Irnk9FJR1LqWthmop2mxjkYWm/wDxP5Ktxa7M7Jgnj/dDaWobKwxSWLm6G/MJOpGuN2E29E18L83eNylrfiaNT6hPbDFKMzZQ0dM1kjmbp2j2WQkkiF2HrBJBJKyACimooAIRvZNuApqendUv5hg3KAJKWP8A1Hf2/qtW7TuHJsewUVVEzPXUIL2sG8sfxN9RuPmtxewx7e7+Ca1uocCotWi2D28nnpjmxYdDndnc913Otv0C1nEA6mqyw6h93Ru69R6hdW7UODv3U84rRNy4fUv+2aNqeU/F/wAXfQrn0tHHXwOgqAQ4HW27TyIWNnuM6Zu6dqcLiYSCodG69zf8VaNQZCDoSRsdlWrqKajd3cw1PuyDZ/6FVo5nsIDhZw+qofJ0LgsVUDyQGvGYbkbJsOI4jQgtMBkiIsXM3HnZPZVhxDQ0Zrq5FJG5h8VnDa26e4W34MfFjYils0lpJ1LtMqldj8ezJAT0vz6qzNHT1IInjbnHxgb+qx0mEUkg/hN+WiE15G91cFimxbLK0OlJc+9yDYWTDiwqHEi5sbA33CojB4YXeHvMrtrlTRQCO7WxhtvqreDnqXkvOnAs4v8A/KyGAYbiPE2IxYdhzc0j9ST7sTebnHkB9VTwzCKzH6+CgoKcvqJzla3kOrieTQu/8H8IUXB+GCkprS1ElnVNSR4pXfk0cgrsGn3u30UanU/jVLsyOBYNS8PYRBhlJrHEPE8jWR53cfVXdkQkd1qpVwYrbfLFdInQpWukGkuaOpCYjlHHFR7TxpOy/ggZHF6eEH81icXF8OkA1DvCPNWcSca7ifFqjcGpeB6A2/JMxqMspomcrZnBeV1Et2WUvs9Zp1swwX0bf2S0Ps3DU053nqnW9GjL+S3YlYTgil9j4Sw2O2r4zKf7jdZuy9JgjtxxX0eZzy3ZJP7BZEBDZG6uKhFIIXSQAfPosbjvDuEcS05p8Zw2mrozpeVnjb6OGo+9ZFLdAmk+GcV4n/Z4cM9RwpiRHMUVa76NkA+hC5liHCvEWE1T6SvwGsZOzcezF9/MFtwQvXA2RD3tFg94HQFVvGmcWXQYpu+iDdEWCadEtSbAEnoFado9BWYcNnkAL7Rjz1KuxYfBDq7xnq79FFtD2sxsVPLMbRsJHXkrcWGf7r7/ANLVcdIGt8I0CjM0lth8krZNRQ10dPAAMjbnTa5To5WiUMsWh2nzVc3c6/PkmTvcIi5u7fEPkih0X8t7hROjylWmWlibK3Z4DkxwHMKKYFeopqbEaOajq4mzU87DHIx2zgVwnizhWfhbFPZHOdJC67qSoP8Aqs/ld/UNvPdd4fduyxHEWAU/EuGS0NToHeKOQbxPGzgqNRgWSPHZ1aTUfinz15OEGNlTG6GeMOadwfxCwOLcPz04z0x71g1yn3h+q2ysw+pwusmoK6PJUwOs62zujh/SVVqI3PFj7vI9CsJtxdM9EkpK0aEzxPI1Dgdb6EKwxzrHKdfNZytwyOd/jbaTk4aFY92GTQOBcc7eo0IUt5HY0QNmkDMp2TjOLZXXBt0UvdOb4suo5FNezNc6X8901ITgETsdGG6ZgbhV2iWedsbWlz3kNa1vMnkpoqQuOxcb8uay2D4a41jXNcBMwZ2N62V+Pl0c+RUjsnZ7wdDwlhmeYNkxOpaDPIPgHKNvkOfVbWLLXOFMVNZRsikvnaNL/gtiBuFuQSSpHnst7nuCigEVIrEj3jYg6R2zGucfkCmrH8R1PsnD+JT3sW0z7epsFGTpNjiraRybCXGpkkmJ8UsjnX9TdHHn5mhvN2g+ZRwZncxRt1zBjn+lhZJ1OarF8NpSSe8qI2n77rykPdL+2esn7Y/0jr1DAKSgpaYaCGFjPuCnugfePqldetquDyV3yO3QuhdJACSukEkAK6V0Er6IAddK6aCnXQBJS4dLPZz/ALNnnuVkoo4aYZYmC/Nx3UoLZAQHfqFG5hjOuo6qF2TSoTnOO5QQzJXsgY16aHcknH3vJM2N/wDpTQCd4XXScwHXkUnG+W6cNrHZMCTDZAKZ0F9YnWHodQrBbcXWLpnmLEg34ZW5fmNk/EuI6DC3GKRz5ZhvHELkepUHwOr6LjmqjieLUeDRNfVyWc/+HGPff6Dp5rAV3G1XIe7oKDuSf9WY3I+SwFdhVRjTvaKid5rm6xzOO39J8lFy+CyOP/ovY1TUvGbfHTCkrImkU099T/Q/qD9Fz+pp308klPPE6GeM5ZI3ixaf081vGDV/s8ncVrHRvjNnjm39Qr+JYTTcTQd1IWNqY9IKge8Ogd1afouDU6dZfcuzR02q/C9sv1/8OVy4eZfE069Cq76YMNnsJW1HCnxGSGZhbLG4scOhCxtVSFpAbqTyWQ01wzbUk+jByUFPKLNFiozhsLbWjvbmVlXQOYblv/lMJIGosnEUjGOhEV7ABYrDq+aLjeCMn7KWJpj9QdVmKvNKC1l7HcrGU9Jm4twJtrF0r238spP5LswOmjizq0dtw+nFI5sjBZrtTbl5rZo3F0Yd1/FYahZnijY0XPRZilc0MdmIyWuSNbWW7Fnn8iskCISGVzGyRvEkbxdr27EIbKRRVBJWt9oVR3PCtTGDrPJHCPmSStj5LTu0qYex4ZTX/iVDpCPJrQufVS24ZP6L9JHdmivs1OjaO7LdtACrHD0Aq+M6Bu4ie6U/2hNpWWju5pBIJHpZZLgCDvOI6qoIv3NNv5uK8/pIbs0Ueh1k9uGTOhJXQukV6g8uK6V0EtggB10CdUroIAJKSCSADeyWZBJAGVa+zc1/ENirDJBILO35hUrd4wtvlcNQpIJHbOHiaoNFtD5Yy02uerSgyQPFideYU7h30frsVQmBiIkA1BsUIETuAG/RRtFxqpGPEjQUxvvW80wC3xCxTmkAEO0sg5uVyfa9jYHr5oAgnpWTjUlpGzmnUKgcDiYS5pLiTck7krLOAsmhAJ0YR+EsBvlGid7E1o0Cy7mA7qLJ1F0USUjAYjgor2gsIZUsHgfyP9J8lUwuaWjuyaEEtNnNO7CtpMIGoVWvoW1DO/jA75gs4fzj9VW482TU/DNcxfCX1k0tdRSNmdJZ0kB0cCObevotZlgDyfDZwNjcWIPQrd3UTgBJFc87c1SxPC/b2GaNoFW0enfDofPoVwanR7vfDs0dLrdtQn0abJSXB0+Sx01G517M+S2CwdfQjrcaoCmBcLhZijyajka2MNcBdzAFlOEODYsWrKrFKgWFMRBSO/lkvd7/AJAW+amxPNBASxt3nwtHVx0H1W+YHhowfB6ajGsjWeI9XHVxXfo8W6VvwZ+ty7YUu2Q0IkgeMu+11lY301IY43mOGWd1mRk2L3eQVR1L3M7XtLgdjbn5rQqukrGVT5pJZJJmSEiUuuRY6ELV6Mmtx07D4TFSNa3wgE+EbA3Ujow86WB8tlguGeInV9LI2pjIkj1ky/8A7H5rNNmZMxs0MjXsds5uxU0VNfI2Rj4ffbYdeS512hVBmx2hphqIKcvPq4ldKMxAtuDpYrlXF8zKjjHEMgAbEGRgejR+ZXD6lKsLXydvpuO89/CKwPdxHyYth7N4LRYnUnd0jIr+jQVrkpaIJddRZl+vVbn2fwCPhtso3nnkf8gbD8FnemxvNfwjv9SlWGvlmxXSSS5r0B54VkkiULoGFJBK+qAEkkkgBJIJEIAyQyyNuw5rbj4ggSYyJAdlDILBrxcEcxuFNmErPHYX+IbH1US6i3DKHNBaRYptQxpvbUHQqnC51PL3bhZrvdPJX/4jcp2SEzH0khjlMTvkrQFpSqlU3u3tk5tNirbSDlfvcJjY4i4Ra61kbgck076IIhO580G6JAWTXHxeqACQC5RuDWu058lI1wI81G/e6BivpZRPJaQ4J99Ui24KKGMaxt7jQFMqqKKRupDT/MnA5TbkU+djnxseGukAuHNbv6qMuEHk1HiTBXwZa+MAhxDZrbB3J3z5rC2MYa4333P/AHZdLkohV0ElLM3L3rCwjex5LmdTniztePEwlpB6jkszV40nuXk19Dmc47H4JcLpxiWP0UDgCyImocOoHu/Wy39sJb4nDxO+i0rgCAPxDEawm9skDfIbn8Ft2L4kKRghhcDVSC//AMbevquvRx24/wCzj1s92SvgrYjiIheaaCxmPvO5MH6rFxULHZg4XvrqpIaXK4HUk6knclXY48pXajkIaHDWU1Q2aMZXDp0WZY1vdmNrWtA2DRYKuxovYKUOO6CIz4m35ELj0k3tmNV1S43ElQ91/mbLrtdKIaaea9gyJ7yenhXIsKhLmxm2riD9+qx/VpcRia/pUeZSJsRIipQwbgXJHoujcM0xpOG8LiLcv+Xa/wBSdfzXO8ZYZAGc3ODRbzIXW2QiOkhphYd0xrG+VhZQ9Kj7pSD1V+2MSK2qCJBaSCLEcimraMMRKCJQKAFdJJDZABukhdIFABSuOqF7ooAvFxaLSNIH8yMR7o5TYsdz5KISOY7K11v6XagoMcDJlZeN/ON2x9FE6AVQkpznj1ZfVh2+XRXaOpZUsuLgjdp3CgdaZjmbOG7SoKF5hlLCNL6HmPJIKtF2sYHNPQjmlSHPTs9EqtwMOa+yrUM9oo29Rf6oI+C+eQTbc04HMLgqJ8hb5pgSE3TT7wTWuvzTgNboAaD5fNNeid0iLpgMt9ycBumkEeiTHC6AFI240T6V+V+Q89kWsvcclE8GNwdzBukBccS3VpXOuNKZtPi0kpj8FQBJ89nLoZGYBzTuL2WpdpUHd4AMQtrTOc0+jgbfWy59RDdBnTo8mzKvsi4GgjouFRXubYTyST26i9gE+FslRM6eUkvkOYlZGCjFHw9h+HAaQ0rMw87X/NCCnsBZXYo1FIrnLdJsfFBexIUhZYqVrcoTnNsASNVYVsjATgbaJW8Ka063KZExvFUvccOYi/Yui7sf3EfoufUEWVgA5WA9VvHHkoZw+I/96djfkLlaVSEWaL2u4uPoFg+qTvKl8I3PTY1ib+WSRwtqccw6lve9Q0HzsunucXElcz4YHtXF1MLfwWySkedl0trSBca33C6/SY/xOXyzk9Tf8iXwh8re9gbJ8TdD5hV1ZjLcjg4kBV3Nymy0jLkvI1AolApkQeiBRvZAoAV9EroJbIAIR0CajdAF1vd1Jy2yv/kdv8k2SE3yP0ttm5fNMdMSMtRDntzbo8KzBIJo7GTvo+Tvib6hVnT0Ma7PaKfwv+CRRSB0c32g8Y3I2cFNNFZuV1sp2cNj+ihc/P8AYymxHuvPLyKAJZ5gGOZc3LCR5hY+nl7uKC9xp+adXzGCnZI8WMbi13oQVG+7mxDrZNAkZiObwXJTM+YlQMdplB2RJsQeXNMjROHWsVOHZgqrRc3Fx5qcO5FAmL4k6yDU4XtogQ1zVG5lwVN8k13mgCMSlmhUjssrdN1GW3NlHZ8eoQMuU4LowCdWmyo8S4czGMFqMOkNm1GUX6EOB/JW6apY54bsSNQm1Mn27Gdbn7lFqwTp2VJWl7nDkGhv3CybTx3aFchizNcbbpsMYjaD0Uwsb3ZBUcpsLKSSUONmqJwsPNIBlwUwOCNjrYKF5ygnkOakBrPaDVDu8Opwdy+U/QBa3C8MbI23uRZifXkrfG1R3uPwwA37uFot5kkqHIDQykAXe4Nv5BeZ10t2eX0ei0UduGP2Xuz2mEuOYhUkfwqdkYPm4n8l0INttqtM7P4DHR4hUgfxakNB8mtAW3CdoZrv0WzoI7cEUY+uluzyJmOyl2triygcDbWxINrhUsOrHyVk7nG7XOIsdrBXdLiMC27rLtONoYSmpxKBQVjErooIASCKCACldBBAGRdcNAe3vox195vzVOeAxv8AaaR5JG7dirkw7t1mkgKFwEkbnHRw5jRVnSiWGsZJCHSNs06E20v5jko6qDKzM3xR29SB+YUGFyOfI8O1DhqDsU/MabEvZWH7F7c2U62PkgDG433k2Czxh+oLCHeWYKxTStkPeH3WDT1socdAiw2uDRYCO48tVBhDycNpnE3L2hzvMo8kvBmYTce7rurUcWa34KvSDObHYK285QLc0ytheQ0WCY1xVd0rg8DqnB5DjqmItM13CfZRwuJvdTfCEgG3TTqid00E6pgCxvojrbUI7JpedPNAiN8TcwcLtI6KSQAyBztS1hKc1xO6jqTa9v8Aack2MtU8sJY0NdusfLOSS1uysYY0SUoLgOaiMLG7BKLvkGqZEDZSMIe+xAIyprwLbJRm0v8AapgYHjOudh0VLHG9zGT5i4g2JtbRaYziGp710eHOkEo3IN2D1ut447pY6vhSvkkBz00ffROBsWuvb81zaljbTUcTYxYOaHu6uJG5WTq90Z3ZuaCUHh20WZ4arEKx9fWzROqHAZu5b4RYaK0Yw+mETZctjcX2JWOpquUAxXGUm501WScbxkLOklJuT8nclSUUbNweYYcGjozPEavO98kYdrqdLddFl3OOYArmbSRKxzXFrgdHNNiPQrfMCrZsTwttRUkOla8szAWzAdfNbOk1CktldGNrdLse9PsmoGgSuubC5JKyAJbdw96//QsbQ+KUX5krJk2ZI4AXYPD5LuRnMRGuu6bonPaGNZbm0E+qamUsCRS5pFAAKF0igd0ALkgkiCgD/9k=" width="132" height="132" alt="Portrait of Prashant Kumar"><h1>Prashant Kumar</h1></div>
+      <p class="lead"><strong>Senior UI/UX designer and front-end developer.</strong> I design the interface in Figma, then build it in React and Vue.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://www.behance.net/uipears" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.2-1.7-.4-1 .1-2.3 1.6-2.3H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>See designs on Behance</a>
+        <a class="btn ghost" href="#contact"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.1A8.4 8.4 0 1 1 21 11.5z"/></svg>Get in touch</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-bar"><span id="stage-label">Built in React</span>
+        <button class="toggle" id="toggle" type="button" aria-pressed="false"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span>Show wireframe</span></button>
+      </div>
+      <div class="screen" id="screen" aria-hidden="true">
+        <div class="row">
+          <div class="box b1"><small>Open loads</small><b>128</b></div>
+          <div class="box b2"><small>On time</small><b>94%</b></div>
+          <div class="box b3"><small>Invoices</small><b>36</b></div>
+        </div>
+        <div class="chart"><i style="height:40%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:80%"></i><i style="height:66%"></i><i style="height:92%"></i><i style="height:74%"></i></div>
+      </div>
+      <p class="caption">A sample logistics dashboard. Try the toggle to see it as a wireframe.</p>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div><b>9+</b><span>years in UI/UX and front-end</span></div>
+    <div><b>15+</b><span>enterprise web apps built</span></div>
+    <div><b>4</b><span>industries: logistics, finance, SaaS, ed-tech</span></div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>React.js</span><span>Vue.js</span><span>Next.js</span><span>TypeScript</span><span>Figma</span><span>Tailwind CSS</span><span>Design systems</span><span>Prototyping</span>
+  <span>React.js</span><span>Vue.js</span><span>Next.js</span><span>TypeScript</span><span>Figma</span><span>Tailwind CSS</span><span>Design systems</span><span>Prototyping</span>
+</div></div>
+
+<div class="wrap">
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <h3 class="lede">I design the interface, then I build it, so nothing gets lost in between.</h3>
+        <p>I’m a senior front-end developer and UI/UX designer with more than nine years of experience building scalable web applications, enterprise dashboards and responsive digital products.</p>
+        <p>My work starts with business requirements and ends in screens people find easy to use. I build reusable front-end architecture, work with teams in Agile sprints, and care about accessibility, cross-browser support and performance.</p>
+        <p>Earlier roles as a software engineer and a data analyst taught me to work with APIs, business data and KPIs.</p>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Lucknow, India</dd></div>
+          <div><dt>Role</dt><dd>Senior Front-End / UI-UX Developer</dd></div>
+          <div><dt>Currently at</dt><dd>Bytexus Software Solutions (remote)</dd></div>
+          <div><dt>Works on</dt><dd>Logistics, transportation, finance and SaaS</dd></div>
+        </dl>
+      </div>
+      <ul class="wins">
+        <li><span class="ic a"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-9"/></svg></span><span>Built and maintained 15+ enterprise web apps in React.js and Vue.js, with UX that reduced support requests.</span></li>
+        <li><span class="ic y"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><span>Delivered SaaS, logistics, transportation and factoring platforms.</span></li>
+        <li><span class="ic t"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/></svg></span><span>Created high-fidelity prototypes, wireframes and reusable design systems.</span></li>
+        <li><span class="ic o"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span><span>Led UI/UX for logistics, factoring and SaaS products, shortening task completion time.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>What I do</h2>
+    <p class="sub">Design and code, handled by one person from first sketch to finished screen.</p>
+    <div class="cards">
+      <div class="step"><span class="ic a"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/></svg></span><h3>UI/UX design</h3><p>User flows, wireframes and high-fidelity prototypes for logistics, finance and SaaS products.</p><div class="chips"><span>Wireframes</span><span>Prototypes</span><span>User flows</span></div></div>
+      <div class="step"><span class="ic y"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4"/><path d="m16 8 5 4-5 4"/><path d="m14 5-4 14"/></svg></span><h3>Front-end development</h3><p>Responsive, accessible interfaces built with modern frameworks.</p><div class="chips"><span>React</span><span>Vue</span><span>Next.js</span><span>Nuxt.js</span></div></div>
+      <div class="step"><span class="ic t"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><h3>Design systems</h3><p>Reusable components and patterns that keep large products consistent.</p><div class="chips"><span>Reusable components</span><span>Responsive layouts</span></div></div>
+      <div class="step"><span class="ic o"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-9"/></svg></span><h3>Dashboards and reports</h3><p>Data-heavy screens, charts and reporting interfaces for business users.</p><div class="chips"><span>Dashboards</span><span>Data visualization</span><span>Reports</span></div></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <p class="sub">Product design and front-end builds. Full case studies are on Behance.</p>
+    <div class="bento">
+      <a class="tile x t-accent" href="https://vue-quizshow.vercel.app/" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect width="150" height="110" rx="14" fill="currentColor" opacity=".16"/><rect x="14" y="14" width="92" height="9" rx="4.5" fill="currentColor" opacity=".75"/><rect x="14" y="30" width="60" height="9" rx="4.5" fill="currentColor" opacity=".4"/><rect x="14" y="50" width="56" height="22" rx="8" fill="currentColor" opacity=".25"/><rect x="76" y="50" width="56" height="22" rx="8" fill="currentColor"/><path d="m96 61 5 5 9-10" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="78" width="56" height="22" rx="8" fill="currentColor" opacity=".25"/><rect x="76" y="78" width="56" height="22" rx="8" fill="currentColor" opacity=".25"/><circle cx="187" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="8" opacity=".3"/><circle cx="187" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-dasharray="96 138" transform="rotate(-90 187 40)"/><rect x="164" y="76" width="46" height="8" rx="4" fill="currentColor" opacity=".5"/></svg>
+        <div><p class="kind">Front-end build</p><h3>Vue Quiz Show</h3><p>An interactive quiz app built with Vue and deployed on Vercel.</p><p class="go">Open live site ↗</p></div>
+      </a>
+      <a class="tile t-pear" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect width="124" height="110" rx="14" fill="currentColor" opacity=".16"/><rect x="14" y="14" width="50" height="8" rx="4" fill="currentColor" opacity=".75"/><rect x="14" y="30" width="96" height="6" rx="3" fill="currentColor" opacity=".35"/><rect x="14" y="42" width="80" height="6" rx="3" fill="currentColor" opacity=".35"/><rect x="14" y="60" width="72" height="22" rx="7" fill="currentColor"/><rect x="22" y="68" width="34" height="6" rx="3" style="fill:var(--tile)"/><rect x="14" y="90" width="40" height="8" rx="4" fill="currentColor" opacity=".35"/><rect x="136" y="8" width="84" height="40" rx="12" fill="currentColor" opacity=".16"/><circle cx="154" cy="28" r="9" fill="currentColor"/><path d="m150 28 3 3 5-6" fill="none" style="stroke:var(--tile)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="170" y="24" width="38" height="8" rx="4" fill="currentColor" opacity=".6"/><rect x="136" y="58" width="84" height="40" rx="12" fill="currentColor" opacity=".16"/><circle cx="154" cy="78" r="9" fill="currentColor" opacity=".4"/><rect x="170" y="74" width="38" height="8" rx="4" fill="currentColor" opacity=".35"/></svg>
+        <div><p class="kind">UI/UX design</p><h3>Factoring application</h3><p>Workflows for a freight factoring platform.</p><p class="go">View on Behance ↗</p></div>
+      </a>
+      <a class="tile w t-ink" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect width="220" height="110" rx="14" fill="currentColor" opacity=".14"/><path d="M22 86C62 86 50 42 92 42S130 80 172 30" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" opacity=".8"/><circle cx="22" cy="86" r="9" fill="currentColor"/><circle cx="92" cy="42" r="6" fill="currentColor" opacity=".55"/><circle cx="172" cy="30" r="11" fill="currentColor"/><circle cx="172" cy="30" r="4" style="fill:var(--tile)"/><rect x="124" y="64" width="84" height="34" rx="10" fill="currentColor" opacity=".22"/><rect x="134" y="73" width="44" height="6" rx="3" fill="currentColor" opacity=".8"/><rect x="134" y="85" width="30" height="6" rx="3" fill="currentColor" opacity=".45"/><rect x="14" y="14" width="46" height="18" rx="9" fill="currentColor" opacity=".25"/><rect x="22" y="20" width="30" height="6" rx="3" fill="currentColor" opacity=".8"/></svg>
+        <div><p class="kind">UI/UX design</p><h3>Transportation Management System</h3><p>Operations, dashboards and reporting for logistics teams.</p><p class="go">View on Behance ↗</p></div>
+      </a>
+      <a class="tile w t-lilac" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect width="220" height="110" rx="14" fill="currentColor" opacity=".14"/><circle cx="56" cy="55" r="28" fill="none" stroke="currentColor" stroke-width="12" opacity=".3"/><circle cx="56" cy="55" r="28" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="112 176" transform="rotate(-90 56 55)"/><rect x="110" y="62" width="16" height="30" rx="4" fill="currentColor" opacity=".35"/><rect x="132" y="44" width="16" height="48" rx="4" fill="currentColor" opacity=".5"/><rect x="154" y="54" width="16" height="38" rx="4" fill="currentColor" opacity=".35"/><rect x="176" y="24" width="16" height="68" rx="4" fill="currentColor"/><path d="M110 40 132 30l22 8 38-22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/></svg>
+        <div><p class="kind">Data visualization</p><h3>Enterprise dashboards</h3><p>Dashboard and chart demos.</p><p class="go">View on Behance ↗</p></div>
+      </a>
+      <a class="tile t-peach" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect x="52" y="0" width="116" height="130" rx="18" fill="currentColor" opacity=".16"/><rect x="64" y="12" width="92" height="50" rx="11" fill="currentColor"/><rect x="73" y="21" width="26" height="6" rx="3" style="fill:var(--tile)" opacity=".8"/><rect x="73" y="43" width="46" height="6" rx="3" style="fill:var(--tile)" opacity=".6"/><circle cx="140" cy="46" r="7" style="fill:var(--tile)" opacity=".6"/><circle cx="76" cy="78" r="7" fill="currentColor" opacity=".5"/><rect x="90" y="73" width="40" height="6" rx="3" fill="currentColor" opacity=".7"/><rect x="90" y="83" width="26" height="5" rx="2.5" fill="currentColor" opacity=".35"/><rect x="138" y="75" width="16" height="6" rx="3" fill="currentColor" opacity=".6"/><circle cx="76" cy="100" r="7" fill="currentColor" opacity=".35"/><rect x="90" y="95" width="40" height="6" rx="3" fill="currentColor" opacity=".5"/></svg>
+        <div><p class="kind">UI design</p><h3>Banking app</h3><p>Mobile banking screens.</p><p class="go">View on Behance ↗</p></div>
+      </a>
+      <a class="tile t-surface" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect x="30" width="160" height="110" rx="14" fill="currentColor" opacity=".12"/><rect x="44" y="14" width="64" height="42" rx="10" fill="currentColor" opacity=".18"/><circle cx="76" cy="31" r="11" fill="currentColor" opacity=".75"/><rect x="60" y="46" width="32" height="5" rx="2.5" fill="currentColor" opacity=".45"/><rect x="112" y="14" width="64" height="42" rx="10" fill="currentColor" opacity=".18"/><path d="M144 20c10 0 15 8 15 14 0 5-6 8-15 8s-15-3-15-8c0-6 5-14 15-14z" fill="currentColor" opacity=".75"/><rect x="128" y="46" width="32" height="5" rx="2.5" fill="currentColor" opacity=".45"/><rect x="44" y="66" width="132" height="30" rx="15" fill="currentColor"/><rect x="86" y="78" width="48" height="6" rx="3" style="fill:var(--tile)"/></svg>
+        <div><p class="kind">UI design</p><h3>Grocery app</h3><p>Shopping screens and flows.</p><p class="go">View on Behance ↗</p></div>
+      </a>
+      <a class="tile t-pear" href="https://www.behance.net/uipears" target="_blank" rel="noopener">
+        <svg class="art" viewBox="0 0 220 110" aria-hidden="true"><rect width="220" height="110" rx="14" fill="currentColor" opacity=".14"/><rect x="14" y="14" width="112" height="62" rx="12" fill="currentColor" opacity=".2"/><circle cx="70" cy="45" r="17" fill="currentColor"/><path d="M65 36l15 9-15 9z" style="fill:var(--tile)"/><rect x="14" y="88" width="112" height="8" rx="4" fill="currentColor" opacity=".25"/><rect x="14" y="88" width="70" height="8" rx="4" fill="currentColor"/><rect x="140" y="14" width="64" height="8" rx="4" fill="currentColor" opacity=".75"/><circle cx="146" cy="40" r="6" fill="currentColor"/><rect x="158" y="37" width="46" height="6" rx="3" fill="currentColor" opacity=".5"/><circle cx="146" cy="60" r="6" fill="currentColor" opacity=".55"/><rect x="158" y="57" width="40" height="6" rx="3" fill="currentColor" opacity=".4"/><circle cx="146" cy="80" r="6" fill="currentColor" opacity=".3"/><rect x="158" y="77" width="46" height="6" rx="3" fill="currentColor" opacity=".3"/></svg>
+        <div><p class="kind">UI/UX design</p><h3>Ed-tech application</h3><p class="go">More on Behance ↗</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2>How I work</h2>
+    <p class="sub">Four steps from a business requirement to a finished, working interface.</p>
+    <div class="flow">
+      <div class="step"><span class="n" aria-hidden="true">1</span><span class="ic a"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><h3>Understand the brief</h3><p>I start with the business goal and who will use the product. Requirements turn into user needs, flows and a clear scope.</p><div class="chips"><span>Requirements</span><span>User flows</span><span>Scope</span></div></div>
+      <div class="step"><span class="n" aria-hidden="true">2</span><span class="ic y"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><h3>Design and prototype</h3><p>Wireframes come first, then high-fidelity prototypes you can click through. Repeated patterns go into a reusable design system.</p><div class="chips"><span>Figma</span><span>Lunacy</span><span>Prototypes</span><span>Design systems</span></div></div>
+      <div class="step"><span class="n" aria-hidden="true">3</span><span class="ic t"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></svg></span><h3>Build in code</h3><p>Designs become reusable, responsive components that work across browsers and devices, with accessibility built in.</p><div class="chips"><span>React</span><span>Vue</span><span>TypeScript</span><span>Tailwind CSS</span></div></div>
+      <div class="step"><span class="n" aria-hidden="true">4</span><span class="ic o"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0"/><path d="M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></span><h3>Ship and refine</h3><p>Work moves in Agile sprints with code reviews and Git workflows. After launch I tune usability and performance.</p><div class="chips"><span>Agile</span><span>Git</span><span>Code review</span><span>Performance</span></div></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="jobs">
+      <li><h3>Senior Front-End / UI-UX Developer</h3><p class="meta">Bytexus Software Solutions, Lucknow (remote) · April 2021 to present</p><p>Lead UI/UX design in Figma and Lunacy for logistics, transportation, finance and SaaS platforms. Build and maintain web apps in React.js, Vue.js, TypeScript, JavaScript, HTML and CSS, including reusable components, dashboards, reporting interfaces and responsive layouts. Turn business requirements into scalable front-end solutions, and take part in sprint planning, code reviews and Git-based workflows.</p></li>
+      <li><h3>Front-End Developer</h3><p class="meta">Bito Technologies, Lucknow · September 2020 to March 2021</p><p>Built responsive landing pages and custom web interfaces with Bootstrap and Vue.js. Made marketing assets including social media creatives, logos and branding materials, and tuned the experience for desktop, tablet and mobile.</p></li>
+      <li><h3>Data Analysis Executive</h3><p class="meta">Sakhsham Knowledge Services, Lucknow · September 2018 to November 2019</p><p>Collected, analyzed and interpreted business data to produce reports and insights, and reviewed KPIs and performance metrics to find areas to improve.</p></li>
+      <li><h3>Software Engineer</h3><p class="meta">Pixie Infotech, Lucknow · February 2016 to August 2018</p><p>Designed web architectures and connected front-end interfaces to APIs. Built responsive applications with HTML, CSS, JavaScript and Bootstrap, and added validation and usability improvements to business applications.</p></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="sub">The tools and practices I work with.</p>
+    <div class="cards">
+      <div class="step"><span class="ic a"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4"/><path d="m16 8 5 4-5 4"/><path d="m14 5-4 14"/></svg></span><h3>Front-end</h3><p>Interfaces built from reusable components and connected to APIs.</p><div class="chips"><span>React.js</span><span>Vue.js</span><span>Next.js</span><span>Nuxt.js</span><span>TypeScript</span><span>JavaScript (ES6+)</span><span>HTML5</span><span>CSS3</span><span>REST APIs</span></div></div>
+      <div class="step"><span class="ic y"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15v4M17 17h4"/></svg></span><h3>Styling</h3><p>Consistent, responsive layouts across screen sizes.</p><div class="chips"><span>Tailwind CSS</span><span>Bootstrap</span><span>Sass/SCSS</span><span>Reactstrap</span><span>Responsive design</span></div></div>
+      <div class="step"><span class="ic t"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/></svg></span><h3>Design</h3><p>From first sketch to clickable prototype.</p><div class="chips"><span>Figma</span><span>Lunacy</span><span>Photoshop</span><span>Illustrator</span><span>Canva</span><span>Wireframing</span><span>Prototyping</span><span>Design systems</span></div></div>
+      <div class="step"><span class="ic o"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 12A9 9 0 0 1 18.5 5.8L21 8"/><path d="M21 3v5h-5"/><path d="M3 21v-5h5"/></svg></span><h3>Ways of working</h3><p>How I keep projects organized and quality high.</p><div class="chips"><span>Agile</span><span>Scrum</span><span>Git</span><span>GitHub</span><span>SVN</span><span>Accessibility</span><span>Cross-browser compatibility</span><span>Performance optimization</span></div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let’s build something clear.</h2>
+    <p>Based in Lucknow, India. Email me about a product that needs a better interface.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:skyprash@gmail.com"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>skyprash@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/prashk055" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 2a2.5 2.5 0 0 1 5 0v3"/></svg>LinkedIn</a>
+      <a class="btn ghost" href="https://www.behance.net/uipears" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.2-1.7-.4-1 .1-2.3 1.6-2.3H17a4 4 0 0 0 4-4C21 6.5 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg>Behance</a>
+    </div>
+  </section>
+  <footer>© 2026 Prashant Kumar</footer>
+</div>
+<script>
+(function(){
+  var t=document.querySelector('.track');t.innerHTML=t.innerHTML;
+  var btn=document.getElementById('toggle'),screen=document.getElementById('screen'),label=document.getElementById('stage-label');
+  btn.addEventListener('click',function(){
+    var wire=screen.classList.toggle('wire');
+    btn.setAttribute('aria-pressed',String(wire));
+    btn.querySelector('span').textContent=wire?'Show built version':'Show wireframe';
+    label.textContent=wire?'Wireframe in Figma':'Built in React';
+  });
+})();
+</script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.bento .tile,.cards .step,.flow .step,.wins li,.facts');
+  els.forEach(function(el){
+    var sibs=Array.prototype.filter.call(el.parentNode.children,function(c){return c.classList.contains('reveal')||els.length&&Array.prototype.indexOf.call(els,c)>-1});
+    el.style.setProperty('--d',(sibs.indexOf(el)*0.09)+'s');
+    el.classList.add('reveal');
+  });
+  function count(el){
+    var m=el.textContent.match(/^(\d+)(.*)$/);if(!m)return;
+    var n=+m[1],t0=null;
+    function f(t){t0=t0||t;var k=Math.min((t-t0)/900,1),e=1-Math.pow(1-k,3);
+      el.textContent=Math.round(n*e)+m[2];if(k<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+  }
+  var nums=document.querySelectorAll('.stats b');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){
+    if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+  var io2=new IntersectionObserver(function(es){es.forEach(function(x){
+    if(x.isIntersecting){count(x.target);io2.unobserve(x.target)}})},{threshold:.6});
+  nums.forEach(function(n){io2.observe(n)});
+})();
+</script>
+</body>
+</html>
